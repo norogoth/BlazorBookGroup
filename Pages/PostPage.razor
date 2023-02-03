@@ -1,8 +1,9 @@
 ﻿@using BlazorBookGroup.Data
+@inject UserService UserService
 
 <h3>PostPage</h3>
 <li class="card">
-    <b>User ID: @Post.Id</b>
+    <b>User ID: @(Post.CreatorUserId)</b>
     <section class="bg-light">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -27,8 +28,8 @@
         </div>
     </section>
     <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="@CollapseId" aria-expanded="false" aria-controls="@CollapseId">
-            Notes: @CollapseId
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#@CollapseId" aria-expanded="false" aria-controls="@CollapseId">
+            Notes
         </button>
     </p>
     <div class="collapse" id="@CollapseId">

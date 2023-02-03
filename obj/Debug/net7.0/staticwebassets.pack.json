@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\data\\posts.json"
     },
     {
+      "Id": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\wwwroot\\data\\users.json",
+      "PackagePath": "staticwebassets\\data\\users.json"
+    },
+    {
       "Id": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

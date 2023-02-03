@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cJ3rNDTnvVqzDipRxo/DcI/DkCDxULWTOJeQdx4KCDE=",
+  "Hash": "jzMfnfD6YMj/HWYtyXPLMlHAP4rWmfGEtGkVWqDh0Q8=",
   "Source": "BlazorBookGroup",
   "BasePath": "_content/BlazorBookGroup",
   "Mode": "Default",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\data\\posts.json"
+    },
+    {
+      "Identity": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\wwwroot\\data\\users.json",
+      "SourceId": "BlazorBookGroup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\wwwroot\\",
+      "BasePath": "_content/BlazorBookGroup",
+      "RelativePath": "data/users.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\users.json"
     },
     {
       "Identity": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\wwwroot\\favicon.png",

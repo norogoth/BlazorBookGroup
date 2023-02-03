@@ -1,5 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
+
 
 namespace BlazorBookGroup.Data
 {
@@ -14,5 +17,12 @@ namespace BlazorBookGroup.Data
         public string? QuoteLocation { get; set; }
         public string? Note { get; set; }
         public override string ToString() => JsonSerializer.Serialize<Post>(this);
+        public User GetUser()
+        {
+            IWebHostEnvironment env;
+            UserService userService = new();
+            IEnumerable<User> users = userService.GetUsers();
+            return users.First(user => user.Id == Id);
+        }
     }
 }
