@@ -1,0 +1,25 @@
+﻿@page "/todo"
+<h3>ToDo</h3>
+
+<ul>
+    @foreach (ToDoItem todo in todos)
+    {
+        <li>@todo.Title</li>
+    }
+</ul>
+
+<input placeholder="Something todo" @bind="newToDo"/>
+<button @onclick="AddToDo">Add todo</button>
+
+@code {
+    private string? newToDo;
+    private List<ToDoItem> todos = new();
+    private void AddToDo()
+    {
+        if (!string.IsNullOrWhiteSpace(newToDo))
+        {
+            todos.Add(new ToDoItem { Title = newToDo });
+            newToDo = string.Empty;
+        }
+    }
+}

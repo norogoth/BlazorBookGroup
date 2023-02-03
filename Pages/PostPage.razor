@@ -1,0 +1,63 @@
+﻿@using BlazorBookGroup.Data
+
+<h3>PostPage</h3>
+<li class="card">
+    <b>User ID: @Post.Id</b>
+    <section class="bg-light">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-12">
+                    <div class="card text-white" style="background-color: #1f959b; border-radius: 15px;">
+                        <div class="card-body">
+
+                            <i class="fas fa-quote-left fa-2x mb-4"></i>
+
+                            <p class="lead">@Post.Quote</p>
+                            @if (!string.IsNullOrEmpty(Post.QuoteLocation))
+                            {
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">@Post.QuoteLocation</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="@CollapseId" aria-expanded="false" aria-controls="@CollapseId">
+            Notes: @CollapseId
+        </button>
+    </p>
+    <div class="collapse" id="@CollapseId">
+        <div class="card card-body">
+            <p><b>Note: </b>@Post.Note</p>
+        </div>
+    </div>
+</li>
+
+@if (!PostExists)
+{
+    <h1>ERROR: Post is null</h1>
+}
+
+@code {
+    [Parameter, EditorRequired]
+    public Post? Post { get; set; } //definitely want this to be required
+    private string? CollapseId;
+    private bool PostExists = true;
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (Post != null)
+        {
+            CollapseId = "collapse" + Post.Id;
+        }
+        else
+        {
+            PostExists = false;
+        }
+    }
+}

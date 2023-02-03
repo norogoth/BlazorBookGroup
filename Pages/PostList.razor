@@ -1,0 +1,28 @@
+﻿@page "/postlist"
+@using BlazorBookGroup.Data
+@using BlazorBookGroup.Pages
+@inject PostListService PostListService
+
+
+
+<h3>PostList</h3>
+
+<ul>
+    @foreach ( Post post in posts)
+        {
+ 
+            <li class="card">
+                <PostPage Post="@post"/>
+            </li>
+        }
+</ul>
+
+
+@code {
+    private IEnumerable<Post> posts;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        posts = PostListService.GetPosts();
+    }
+}
