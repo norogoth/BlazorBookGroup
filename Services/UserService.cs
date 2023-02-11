@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
+using BlazorBookGroup.Data;
 
-namespace BlazorBookGroup.Data
+namespace BlazorBookGroup.Services
 {
     public class UserService
     {
@@ -14,25 +15,31 @@ namespace BlazorBookGroup.Data
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "users.json"); }
         }
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<UserDataModel> GetUsers()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<User[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<UserDataModel[]>(
+                    jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                 );
             }
         }
+        public UserDataModel GetUserById(int id)
+        {
+            IEnumerable<UserDataModel> users = GetUsers();
+            return users.First(users => users.Id == id);
+        }
         public void AddUser(int userId, string firstName, string lastName)
         {
-            IEnumerable<User> users = GetUsers();
-            
+            IEnumerable<UserDataModel> users = GetUsers();
+
         }
         public int GetNewId()
         {
-            IEnumerable<User> users = GetUsers();
+            IEnumerable<UserDataModel> users = GetUsers();
             int maxId = 0;
-            foreach (User user in users)
+            foreach (UserDataModel user in users)
             {
                 if (user.Id > maxId)
                 {

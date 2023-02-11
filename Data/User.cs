@@ -1,6 +1,6 @@
 ﻿namespace BlazorBookGroup.Data
 {
-    public class User
+    public class UserDataModel
     {
         public int Id { get; set; }
         public string? FirstName { get; set; }

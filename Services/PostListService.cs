@@ -1,13 +1,17 @@
 ﻿using System.IO;
 using System.Text.Json;
+using BlazorBookGroup.Data;
 
-namespace BlazorBookGroup.Data
+namespace BlazorBookGroup.Services
 {
     public class PostListService
     {
-        public PostListService(IWebHostEnvironment webHostEnvironment)
+        private readonly UserService userService;
+
+        public PostListService(IWebHostEnvironment webHostEnvironment, UserService userService)
         {
             WebHostEnvironment = webHostEnvironment;
+            this.userService = userService;
         }
         public IWebHostEnvironment WebHostEnvironment { get; }
 
@@ -15,26 +19,38 @@ namespace BlazorBookGroup.Data
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "posts.json"); }
         }
-        public IEnumerable<Post> GetPosts()
+
+        private ICollection<PostDataModel> GetData()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Post[]>(jsonFileReader.ReadToEnd(),
+                var posts = JsonSerializer.Deserialize<PostDataModel[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
                 );
+
+                return posts;
             }
+        }
+
+        public IEnumerable<Post> GetPosts()
+        {
+            var posts = GetData();
+            var users = userService.GetUsers();
+
+            return posts.Select(x => new Post(x, users.FirstOrDefault(y => y.Id == x.CreatorUserId)));
+
         }
         public void AddPost(int userId, string quote)
         {
-            IEnumerable<Post> posts = GetPosts();
+            IEnumerable<PostDataModel> posts = GetData();
             //Post newPost = new Post(userId, quote);
             //posts.Add(newPost);
         }
         public int GetNewId()
         {
-            IEnumerable<Post> posts = GetPosts();
+            IEnumerable<PostDataModel> posts = GetData();
             int maxId = 0;
-            foreach (Post post in posts)
+            foreach (PostDataModel post in posts)
             {
                 if (post.Id > maxId)
                 {

@@ -32,12 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/LogIn.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nSW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/PostList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdExpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/PostPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/SignUpModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwTW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/SubmitPostModal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VibWl0UG9zdE1vZGFsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Norog/source/repos/BlazorBookGroup/BlazorBookGroup/Pages/ToDo.razor]

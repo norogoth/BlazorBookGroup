@@ -1,4 +1,5 @@
 using BlazorBookGroup.Data;
+using BlazorBookGroup.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -9,6 +10,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<PostListService>();
+builder.Services.AddSingleton<UserService>();
 
 var app = builder.Build();
 

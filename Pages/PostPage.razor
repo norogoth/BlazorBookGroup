@@ -1,9 +1,8 @@
-﻿@using BlazorBookGroup.Data
-@inject UserService UserService
+﻿@using BlazorBookGroup.Services;
 
 <h3>PostPage</h3>
 <li class="card">
-    <b>User ID: @(Post.CreatorUserId)</b>
+    <b>@Post.User.FirstName @Post.User.LastName</b>
     <section class="bg-light">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -13,12 +12,12 @@
 
                             <i class="fas fa-quote-left fa-2x mb-4"></i>
 
-                            <p class="lead">@Post.Quote</p>
-                            @if (!string.IsNullOrEmpty(Post.QuoteLocation))
+                            <p class="lead">@Post.Content.Quote</p>
+                            @if (!string.IsNullOrEmpty(Post.Content.QuoteLocation))
                             {
                                 <hr>
                                 <div class="d-flex justify-content-between">
-                                    <p class="mb-0">@Post.QuoteLocation</p>
+                                    <p class="mb-0">@Post.Content.QuoteLocation</p>
                                 </div>
                             }
                         </div>
@@ -34,7 +33,7 @@
     </p>
     <div class="collapse" id="@CollapseId">
         <div class="card card-body">
-            <p><b>Note: </b>@Post.Note</p>
+            <p><b>Note: </b>@Post.Content.Note</p>
         </div>
     </div>
 </li>
@@ -46,7 +45,8 @@
 
 @code {
     [Parameter, EditorRequired]
-    public Post? Post { get; set; } //definitely want this to be required
+    public Post Post { get; set; } = null!; //definitely want this to be required
+
     private string? CollapseId;
     private bool PostExists = true;
     protected override void OnParametersSet()
@@ -54,7 +54,7 @@
         base.OnParametersSet();
         if (Post != null)
         {
-            CollapseId = "collapse" + Post.Id;
+            CollapseId = "collapse" + Post.Content.Id;
         }
         else
         {
