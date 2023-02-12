@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jzMfnfD6YMj/HWYtyXPLMlHAP4rWmfGEtGkVWqDh0Q8=",
+  "Hash": "9AVIqa0oNksMXmvSdM5oE6xd58doH0isjveZ8EHWtM8=",
   "Source": "BlazorBookGroup",
   "BasePath": "_content/BlazorBookGroup",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Norog\\.nuget\\packages\\mudblazor\\6.1.8\\staticwebassets\\MudBlazor.min.js"
+    },
     {
       "Identity": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\obj\\Debug\\net7.0\\scopedcss\\bundle\\BlazorBookGroup.styles.css",
       "SourceId": "BlazorBookGroup",

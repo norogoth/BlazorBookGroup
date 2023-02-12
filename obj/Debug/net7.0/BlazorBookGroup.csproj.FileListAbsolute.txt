@@ -30,3 +30,11 @@ C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\ref
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\BlazorBookGroup.pdb
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\BlazorBookGroup.genruntimeconfig.cache
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\ref\BlazorBookGroup.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.JSInterop.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\MudBlazor.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\BlazorBookGroup.csproj.CopyComplete
