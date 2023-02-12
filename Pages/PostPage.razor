@@ -1,8 +1,22 @@
 ﻿@using BlazorBookGroup.Services;
-
+<MudCard>
+    <MudCardContent>
+        <MudText>@Post.User.FirstName @Post.User.LastName</MudText>
+        @if (!string.IsNullOrEmpty(Post.Content.QuoteLocation))
+        {
+            <hr>
+            <MudText>@Post.Content.Quote</MudText>
+            <MudText Typo="Typo.body2" class="d-flex justify-content-between">
+                @Post.Content.QuoteLocation
+            </MudText>
+        }
+    </MudCardContent>
+    <MudCardActions>
+        <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
+    </MudCardActions>
+</MudCard>
 <h3>PostPage</h3>
-<li class="card">
-    <b>@Post.User.FirstName @Post.User.LastName</b>
+    <b></b>
     <section class="bg-light">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,7 +50,6 @@
             <p><b>Note: </b>@Post.Content.Note</p>
         </div>
     </div>
-</li>
 
 @if (!PostExists)
 {

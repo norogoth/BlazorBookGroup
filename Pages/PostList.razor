@@ -5,11 +5,9 @@
 @inject PostListService PostListService
 
 <h3>PostList</h3>
-
 <ul>
     @foreach (Post post in posts)
         {
- 
             <li class="card">
                 <PostPage Post="@post"/>
             </li>
@@ -17,18 +15,6 @@
 </ul>
 <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#add-post-modal">+</button>
 <SubmitPostModal></SubmitPostModal>
-
-
-@code {
-    private IEnumerable<Post> posts;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        posts = PostListService.GetPosts();
-    }
-}
-
 
 
 
@@ -48,6 +34,13 @@
 @code {
     public bool _isOpen;
 
+    private IEnumerable<Post> posts;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        posts = PostListService.GetPosts();
+    }
     public void ToggleOpen()
     {
         if (_isOpen)
