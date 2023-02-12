@@ -1,0 +1,14 @@
+﻿@using BlazorBookGroup.Services
+
+<MudTreeView T="string">
+    <MudTreeViewItem Value="@("Note")">
+        <MudTreeViewItem Value="@Post.Content.Note" />
+    </MudTreeViewItem>
+    <MudTreeViewItem Value="@("Comments")">
+        <MudTreeViewItem Value="@("example comment")" />
+    </MudTreeViewItem>
+</MudTreeView>
+@code {
+    [Parameter, EditorRequired]
+    public Post Post { get; set; } = null!; //definitely want this to be required
+}

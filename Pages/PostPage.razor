@@ -1,7 +1,11 @@
 ﻿@using BlazorBookGroup.Services;
-<MudCard>
+<MudCard Elevation="25">
     <MudCardContent>
-        <MudText>@Post.User.FirstName @Post.User.LastName</MudText>
+        <span>
+            <MudAvatar Color="Color.Info" Variant="Variant.Outlined">@Post.User.FirstName.Substring(0,1)@Post.User.LastName.Substring(0,1)</MudAvatar>
+            <MudText>@Post.User.FirstName @Post.User.LastName</MudText>
+        </span>
+
         @if (!string.IsNullOrEmpty(Post.Content.QuoteLocation))
         {
             <hr>
@@ -11,45 +15,9 @@
             </MudText>
         }
     </MudCardContent>
-    <MudCardActions>
-        <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
-    </MudCardActions>
+    <Comments Post="@Post"/>
 </MudCard>
-<h3>PostPage</h3>
-    <b></b>
-    <section class="bg-light">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-12">
-                    <div class="card text-white" style="background-color: #1f959b; border-radius: 15px;">
-                        <div class="card-body">
 
-                            <i class="fas fa-quote-left fa-2x mb-4"></i>
-
-                            <p class="lead">@Post.Content.Quote</p>
-                            @if (!string.IsNullOrEmpty(Post.Content.QuoteLocation))
-                            {
-                                <hr>
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">@Post.Content.QuoteLocation</p>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#@CollapseId" aria-expanded="false" aria-controls="@CollapseId">
-            Notes
-        </button>
-    </p>
-    <div class="collapse" id="@CollapseId">
-        <div class="card card-body">
-            <p><b>Note: </b>@Post.Content.Note</p>
-        </div>
-    </div>
 
 @if (!PostExists)
 {
