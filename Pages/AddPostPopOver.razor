@@ -1,0 +1,21 @@
+﻿@using System.ComponentModel.DataAnnotations
+<!--NOTE: Will put state in here later. Currently this is unused-->
+
+<MudPopover Open="@IsOpen" Fixed="true" Class="px-4 pt-4 popover">
+    <div class="d-flex flex-column">
+        <MudText>Content of the popover can be anything.</MudText>
+        <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+    </div>
+</MudPopover>
+@code {
+    [Parameter]
+    public bool IsOpen { get; set; }
+
+    public void ToggleOpen()
+    {
+        if (IsOpen)
+            IsOpen = false;
+        else
+            IsOpen = true;
+    }
+}

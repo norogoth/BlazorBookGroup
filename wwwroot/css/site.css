@@ -70,3 +70,8 @@ a, .btn-link {
     .postli {
         margin: 1rem;
     }
+
+    .sticky {
+        position: sticky;
+        bottom: 0;
+    }
