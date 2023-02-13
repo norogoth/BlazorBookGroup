@@ -1,33 +1,71 @@
-﻿<h3>SignUpModal</h3>
+﻿@using BlazorBookGroup.Services
+@using BlazorBookGroup.Data
 
-<div class="modal fade center" data-dismiss="modal" tabindex="-1" role="dialog" id="signup-modal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-main-content">
-                <h3 class="modal-title">Sign up for BookGroup</h3>
-                <div class="form-group">
-                    <label for="inputUsername">Email</label>
-                    <input name="email" class="form-control" id="inputUsername">
-                </div>
-                 <div class="form-group">
-                    <label for="inputUsername">Username</label>
-                    <input name="username" class="form-control" id="inputUsername">
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword" + titleCaseName>Password</label>
-                    <input name="password" class="form-control" id="inputPassword">
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn btn-primary">Submit</button>
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+<MudPopover AnchorOrigin="Origin.CenterCenter" Open="@IsOpen" Fixed="true">
+    <div class="d-flex flex-column">
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />
+            <MudGrid>
+                <MudItem xs="12" sm="7">
+                    <MudCard>
+                        <MudCardContent>
+                            <MudTextField Label="First name" HelperText="Max. 8 characters"
+                                          @bind-Value="model.Username" For="@(() => model.Username)" />
+                            <MudTextField Label="Email" Class="mt-3"
+                                          @bind-Value="model.Email" For="@(() => model.Email)" />
+                            <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
+                                          @bind-Value="model.Password" For="@(() => model.Password)" InputType="InputType.Password" />
+                            <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
+                                          @bind-Value="model.Password2" For="@(() => model.Password2)" InputType="InputType.Password" />
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" sm="5">
+                    <MudPaper Class="pa-4 mud-height-full">
+                        <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
+                        @if (success)
+                        {
+                            <MudText Color="Color.Success">Success</MudText>
+                        }
+                        else
+                        {
+                            <MudText Color="@Color.Error">
+                                <ValidationSummary />
+                            </MudText>
+                        }
+                    </MudPaper>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudText Typo="Typo.body2" Align="Align.Center">
+                        Fill out the form correctly to see the success message.
+                    </MudText>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+        <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
     </div>
-
-</div>
+</MudPopover>
 
 @code {
+    private bool IsOpen = false;
+    private PostDataModel _postDataModel = new();
+    private UserDataModel _user = new();
+    public Post post;
+    public SignUpModal(PostDataModel postDataModel, UserDataModel userDataModel)
+    {
+        _postDataModel = postDataModel;
+        _user = userDataModel;
+        Post post = new Post(postDataModel, userDataModel);
+    }
+    public void ToggleOpen()
+    {
+        if (IsOpen)
+            IsOpen = false;
+        else
+            IsOpen = true;
+    }
 
 }
