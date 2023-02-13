@@ -50,7 +50,7 @@
                     </MudItem>
                 </MudGrid>
             </EditForm>
-            <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+            <MudButton OnClick="Cancel" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
         </div>
     </DialogContent>
 </MudDialog>
@@ -58,6 +58,7 @@
 @code {
     [Parameter]
     public bool IsOpen { get; set; }
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
 
     [Parameter]
     public EventCallback<bool> IsOpenChanged { get; set; }
@@ -81,7 +82,10 @@
         _user = userDataModel;
         Post post = new Post(postDataModel, userDataModel);
     }
-
+    public void Cancel()
+    {
+        MudDialog.Cancel();
+    }
     public async Task ToggleOpen()
     {
         if (IsOpen)
@@ -94,6 +98,7 @@
     public void OnValidSubmit()
     {
         success = true;
+
         StateHasChanged();
     }
 }
