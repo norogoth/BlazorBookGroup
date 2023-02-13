@@ -4,6 +4,7 @@
 @using BlazorBookGroup.Services;
 @using System.ComponentModel.DataAnnotations
 @inject PostListService PostListService
+@inject IDialogService DialogService
 
 <ul>
     @foreach (Post post in posts)
@@ -31,12 +32,20 @@
         posts = PostListService.GetPosts();
     }
     public bool IsOpen = false;
-    public void ToggleOpen()
+
+    public async Task ToggleOpen()
     {
-        if (IsOpen)
-            IsOpen = false;
-        else
-            IsOpen = true;
+        //var parameters = new DialogParameters { ["server"] = server };
+
+        var dialog = await DialogService.ShowAsync<SubmitPostModal>("Delete Server"/*, parameters*/);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            //In a real world scenario we would reload the data from the source here since we "removed" it in the dialog already.
+            //Guid.TryParse(result.Data.ToString(), out Guid deletedServer);
+            //Servers.RemoveAll(item => item.Id == deletedServer);
+        }
     }
 
 

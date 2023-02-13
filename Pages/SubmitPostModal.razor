@@ -1,51 +1,59 @@
 ﻿@using BlazorBookGroup.Services
 @using BlazorBookGroup.Data
 
-<MudPopover AnchorOrigin="Origin.CenterCenter" Open="@IsOpen" Fixed="true">
-    <div class="d-flex flex-column">
-        <EditForm Model="@_post" OnValidSubmit="OnValidSubmit">
-            <DataAnnotationsValidator />
-            <MudGrid>
-                <MudItem xs="12" sm="7">
-                    <MudCard>
-                        <MudCardContent>
-                            <MudTextField Label="Email" Class="mt-3"
-                                          @bind-Value="_post.Content.Quote" For="@(() => _post.Content.Quote)" />
-                            <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
-                                          @bind-Value="_post.Content.QuoteLocation" For="@(() => _post.Content.QuoteLocation)" InputType="InputType.Password" />
-                            <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
-                                          @bind-Value="_post.Content.Note" For="@(() => _post.Content.Note)" InputType="InputType.Password" />
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </MudItem>
-                <MudItem xs="12" sm="5">
-                    <MudPaper Class="pa-4 mud-height-full">
-                        <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
-                        @if (success)
-                        {
-                            <MudText Color="Color.Success">Success</MudText>
-                        }
-                        else
-                        {
-                            <MudText Color="@Color.Error">
-                                <ValidationSummary />
-                            </MudText>
-                        }
-                    </MudPaper>
-                </MudItem>
-                <MudItem xs="12">
-                    <MudText Typo="Typo.body2" Align="Align.Center">
-                        Fill out the form correctly to see the success message.
-                    </MudText>
-                </MudItem>
-            </MudGrid>
-        </EditForm>
-        <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
-    </div>
-</MudPopover>
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.DeleteForever" Class="mr-3 mb-n1" />
+            Create a new ....
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <div class="d-flex flex-column">
+            <EditForm Model="@_post" OnValidSubmit="OnValidSubmit">
+                <DataAnnotationsValidator />
+                <MudGrid>
+                    <MudItem xs="12" sm="7">
+                        <MudCard>
+                            <MudCardContent>
+                                <MudTextField Label="Quote" Class="mt-3"
+                                              @bind-Value="_post.Content.Quote" For="@(() => _post.Content.Quote)" />
+                                <MudTextField Label="Location of Quote" HelperText="Choose a strong password" Class="mt-3"
+                                              @bind-Value="_post.Content.QuoteLocation" For="@(() => _post.Content.QuoteLocation)" InputType="InputType.Password" />
+                                <MudTextField Label="Note" HelperText="Repeat the password" Class="mt-3"
+                                              @bind-Value="_post.Content.Note" For="@(() => _post.Content.Note)" InputType="InputType.Password" />
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+                            </MudCardActions>
+                        </MudCard>
+                    </MudItem>
+                    <MudItem xs="12" sm="5">
+                        <MudPaper Class="pa-4 mud-height-full">
+                            <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
+                            @if (success)
+                            {
+                                <MudText Color="Color.Success">Success</MudText>
+                            }
+                            else
+                            {
+                                <MudText Color="@Color.Error">
+                                    <ValidationSummary />
+                                </MudText>
+                            }
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="12">
+                        <MudText Typo="Typo.body2" Align="Align.Center">
+                            Fill out the form correctly to see the success message.
+                        </MudText>
+                    </MudItem>
+                </MudGrid>
+            </EditForm>
+            <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+        </div>
+    </DialogContent>
+</MudDialog>
 
 @code {
     [Parameter]
