@@ -17,10 +17,11 @@
 
 <MudFab Class="sticky" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" OnClick="@ToggleOpen" />
 
-<SubmitPostModal ToggleOpen="@ToggleOpen"/>
+<SubmitPostModal @bind-IsOpen="IsOpen" />
 
 
 @code {
+    private Boolean _isDialog;
 
     private IEnumerable<Post> posts;
 
@@ -37,16 +38,6 @@
         else
             IsOpen = true;
     }
-
-
-
-
-
-
-
-
-
-
 
 
 

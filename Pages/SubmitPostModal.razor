@@ -1,17 +1,88 @@
-﻿
+﻿@using BlazorBookGroup.Services
+@using BlazorBookGroup.Data
 
-<div class="modal fade center" tabindex="-1" data-dismiss="modal" role="dialog" id="add-post-modal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <h1>sample text</h1>
-            <div class="modal-footer">
-                <button class="btn btn-primary">Submit</button>
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+<MudPopover AnchorOrigin="Origin.CenterCenter" Open="@IsOpen" Fixed="true">
+    <div class="d-flex flex-column">
+        <EditForm Model="@post" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator />
+            <MudGrid>
+                <MudItem xs="12" sm="7">
+                    <MudCard>
+                        <MudCardContent>
+                            <MudTextField Label="Email" Class="mt-3"
+                                          @bind-Value="post.Content.Quote" For="@(() => post.Content.Quote)" />
+                            <MudTextField Label="Password" HelperText="Choose a strong password" Class="mt-3"
+                                          @bind-Value="post.Content.QuoteLocation" For="@(() => post.Content.QuoteLocation)" InputType="InputType.Password" />
+                            <MudTextField Label="Password" HelperText="Repeat the password" Class="mt-3"
+                                          @bind-Value="post.Content.Note" For="@(() => post.Content.Note)" InputType="InputType.Password" />
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+                <MudItem xs="12" sm="5">
+                    <MudPaper Class="pa-4 mud-height-full">
+                        <MudText Typo="Typo.subtitle2">Validation Summary</MudText>
+                        @if (success)
+                        {
+                            <MudText Color="Color.Success">Success</MudText>
+                        }
+                        else
+                        {
+                            <MudText Color="@Color.Error">
+                                <ValidationSummary />
+                            </MudText>
+                        }
+                    </MudPaper>
+                </MudItem>
+                <MudItem xs="12">
+                    <MudText Typo="Typo.body2" Align="Align.Center">
+                        Fill out the form correctly to see the success message.
+                    </MudText>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+        <MudButton OnClick="@ToggleOpen" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
     </div>
-</div>
+</MudPopover>
 
 @code {
+    [Parameter]
+    public bool IsOpen { get; set; }
 
+    [Parameter]
+    public EventCallback<bool> IsOpenChanged { get; set; }
+
+    private PostDataModel _postDataModel;
+    private UserDataModel _user;
+    public Post post;
+    bool success;
+    public SubmitPostModal()
+    {
+        _postDataModel = new();
+        _user = new();
+        Post post = new Post(_postDataModel, _user);
+    }
+    public SubmitPostModal(PostDataModel postDataModel, UserDataModel userDataModel)
+    {
+        _postDataModel = postDataModel;
+        _user = userDataModel;
+        Post post = new Post(postDataModel, userDataModel);
+    }
+
+    public async Task ToggleOpen()
+    {
+        if (IsOpen)
+            IsOpen = false;
+        else
+            IsOpen = true;
+
+        await IsOpenChanged.InvokeAsync(IsOpen);
+    }
+    public void OnValidSubmit()
+    {
+        success = true;
+        StateHasChanged();
+    }
 }
