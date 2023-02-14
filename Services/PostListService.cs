@@ -42,11 +42,11 @@ namespace BlazorBookGroup.Services
         }
         public void AddPost(Post post)
         {
-            List<Post> posts = GetPosts().ToList();
-            posts.Add(post);
+            List<PostDataModel> posts = GetData().ToList();
+            posts.Add(post.Content);
             using(var outputStream = File.OpenWrite(JsonFileName))
             {
-                JsonSerializer.Serialize<IEnumerable<Post>>(
+                JsonSerializer.Serialize<IEnumerable<PostDataModel>>(
                         new Utf8JsonWriter(outputStream, new JsonWriterOptions
                         {
                             SkipValidation = true,
