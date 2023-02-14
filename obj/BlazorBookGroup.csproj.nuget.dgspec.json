@@ -40,6 +40,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Blazored.FluentValidation": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[6.1.8, )"

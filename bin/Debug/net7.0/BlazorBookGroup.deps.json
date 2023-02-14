@@ -8,10 +8,31 @@
     ".NETCoreApp,Version=v7.0": {
       "BlazorBookGroup/1.0.0": {
         "dependencies": {
+          "Blazored.FluentValidation": "2.1.0",
           "MudBlazor": "6.1.8"
         },
         "runtime": {
           "BlazorBookGroup.dll": {}
+        }
+      },
+      "Blazored.FluentValidation/2.1.0": {
+        "dependencies": {
+          "FluentValidation": "11.4.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.1"
+        },
+        "runtime": {
+          "lib/net7.0/Blazored.FluentValidation.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FluentValidation/11.4.0": {
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.4.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authorization/7.0.1": {
@@ -116,6 +137,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Blazored.FluentValidation/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R/s4xBjcRUv1voYeQRo84YZfgYgTkPdxi8ijLEHbPtbo2o4ywaUlOwk8fV68AUH63DtKGgx/oH7LNbZNHBHDcg==",
+      "path": "blazored.fluentvalidation/2.1.0",
+      "hashPath": "blazored.fluentvalidation.2.1.0.nupkg.sha512"
+    },
+    "FluentValidation/11.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WZJyrNf4suiaI6avVG32W9kmBLC3+V5rDTcLeRJjeU4tDmTyDIOz1459DzCKppXs34YpZg9rCUzDY3M4XxG7Ug==",
+      "path": "fluentvalidation/11.4.0",
+      "hashPath": "fluentvalidation.11.4.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/7.0.1": {
       "type": "package",

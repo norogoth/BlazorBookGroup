@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "Blazored.FluentValidation/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.4.0",
+          "Microsoft.AspNetCore.Components.Web": "7.0.1"
+        },
+        "compile": {
+          "lib/net7.0/Blazored.FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/Blazored.FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation/11.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.1": {
         "type": "package",
         "dependencies": {
@@ -234,6 +260,43 @@
     }
   },
   "libraries": {
+    "Blazored.FluentValidation/2.1.0": {
+      "sha512": "R/s4xBjcRUv1voYeQRo84YZfgYgTkPdxi8ijLEHbPtbo2o4ywaUlOwk8fV68AUH63DtKGgx/oH7LNbZNHBHDcg==",
+      "type": "package",
+      "path": "blazored.fluentvalidation/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazored.fluentvalidation.2.1.0.nupkg.sha512",
+        "blazored.fluentvalidation.nuspec",
+        "icon.png",
+        "lib/net6.0/Blazored.FluentValidation.dll",
+        "lib/net7.0/Blazored.FluentValidation.dll"
+      ]
+    },
+    "FluentValidation/11.4.0": {
+      "sha512": "WZJyrNf4suiaI6avVG32W9kmBLC3+V5rDTcLeRJjeU4tDmTyDIOz1459DzCKppXs34YpZg9rCUzDY3M4XxG7Ug==",
+      "type": "package",
+      "path": "fluentvalidation/11.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.4.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/net7.0/FluentValidation.dll",
+        "lib/net7.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/7.0.1": {
       "sha512": "yhkU+dAvkp1o1ZhihwKFsGy2RXxBaLCohev0HN8yaqfFsV1ThvQIRPh6GKcoPln/ARY23N0gIkOv5zx36HRXhg==",
       "type": "package",
@@ -585,6 +648,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Blazored.FluentValidation >= 2.1.0",
       "MudBlazor >= 6.1.8"
     ]
   },
@@ -627,6 +691,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Blazored.FluentValidation": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "MudBlazor": {
             "target": "Package",
             "version": "[6.1.8, )"

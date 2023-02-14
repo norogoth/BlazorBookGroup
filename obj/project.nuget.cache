@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VIsY07HwnRcDOqAvfSyQ4Xp8SOB6CDiwo2t6Jkmz9P9sQhyrkB5rEFgyoijltb+b2qv3Ug5crKMHZiw8Yw/EBQ==",
+  "dgSpecHash": "HHxdsUCsLyK7vgK/hGT3nNlwNZE4bnIvEY3yhL2zWcTYF0rUETqFUsl6R70z+bUOblKjHGFs++9513dOFndOLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Norog\\source\\repos\\BlazorBookGroup\\BlazorBookGroup\\BlazorBookGroup.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Norog\\.nuget\\packages\\blazored.fluentvalidation\\2.1.0\\blazored.fluentvalidation.2.1.0.nupkg.sha512",
+    "C:\\Users\\Norog\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\Norog\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.1\\microsoft.aspnetcore.authorization.7.0.1.nupkg.sha512",
     "C:\\Users\\Norog\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.1\\microsoft.aspnetcore.components.7.0.1.nupkg.sha512",
     "C:\\Users\\Norog\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.1\\microsoft.aspnetcore.components.analyzers.7.0.1.nupkg.sha512",

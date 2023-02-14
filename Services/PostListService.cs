@@ -40,11 +40,21 @@ namespace BlazorBookGroup.Services
             return posts.Select(x => new Post(x, users.FirstOrDefault(y => y.Id == x.CreatorUserId)));
 
         }
-        public void AddPost(int userId, string quote)
+        public void AddPost(Post post)
         {
-            IEnumerable<PostDataModel> posts = GetData();
-            //Post newPost = new Post(userId, quote);
-            //posts.Add(newPost);
+            List<Post> posts = GetPosts().ToList();
+            posts.Add(post);
+            using(var outputStream = File.OpenWrite(JsonFileName))
+            {
+                JsonSerializer.Serialize<IEnumerable<Post>>(
+                        new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                        {
+                            SkipValidation = true,
+                            Indented = true
+                        }),
+                        posts
+                    );
+            }
         }
         public int GetNewId()
         {

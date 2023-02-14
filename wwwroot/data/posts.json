@@ -1,22 +1,62 @@
 [
   {
-    "Id": 1,
-    "CreatorUserId": 1,
-    "Quote": "A wise man gets more use from his enemies than a fool from his friends.",
-    "QuoteLocation": "page 700",
-    "Note": "He has a point"
+    "Content": {
+      "Id": 1,
+      "CreatorUserId": 1,
+      "Quote": "A wise man gets more use from his enemies than a fool from his friends.",
+      "QuoteLocation": "page 700",
+      "Note": "He has a point"
+    },
+    "User": {
+      "Id": 1,
+      "FirstName": "Landon",
+      "LastName": "Aaker",
+      "Email": "example@gmail.com"
+    }
   },
   {
-    "Id": 2,
-    "CreatorUserId": 1,
-    "Quote": "Avoid the Noid",
-    "QuoteLocation":  "end of chapter 5.2",
-    "Note": "This tuch my soul"
+    "Content": {
+      "Id": 2,
+      "CreatorUserId": 1,
+      "Quote": "Avoid the Noid",
+      "QuoteLocation": "end of chapter 5.2",
+      "Note": "This tuch my soul"
+    },
+    "User": {
+      "Id": 1,
+      "FirstName": "Landon",
+      "LastName": "Aaker",
+      "Email": "example@gmail.com"
+    }
   },
   {
-    "Id": 3,
-    "CreatorUserId": 2,
-    "Quote": "Never compete with someone who has nothing to lose.",
-    "Note": "really cool quote"
+    "Content": {
+      "Id": 3,
+      "CreatorUserId": 2,
+      "Quote": "Never compete with someone who has nothing to lose.",
+      "QuoteLocation": null,
+      "Note": "really cool quote"
+    },
+    "User": {
+      "Id": 2,
+      "FirstName": "Nathaniel",
+      "LastName": "King",
+      "Email": "example2@gmail.com"
+    }
+  },
+  {
+    "Content": {
+      "Id": 0,
+      "CreatorUserId": 0,
+      "Quote": "sdfg",
+      "QuoteLocation": "sdfg",
+      "Note": "ggg"
+    },
+    "User": {
+      "Id": 0,
+      "FirstName": null,
+      "LastName": null,
+      "Email": null
+    }
   }
 ]

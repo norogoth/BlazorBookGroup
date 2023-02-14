@@ -38,3 +38,5 @@ C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Mic
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Microsoft.JSInterop.dll
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\MudBlazor.dll
 C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\obj\Debug\net7.0\BlazorBookGroup.csproj.CopyComplete
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\Blazored.FluentValidation.dll
+C:\Users\Norog\source\repos\BlazorBookGroup\BlazorBookGroup\bin\Debug\net7.0\FluentValidation.dll
